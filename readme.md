@@ -205,7 +205,51 @@ git branch
 
 ---
 
-## 📤 5. Sincronizando com o Repositório Remoto
+## 🏷️ 5. Trabalhando com Tags
+
+### 📌 Criar uma nova tag
+
+```bash
+git tag -a v1.0 -m "Versão 1.0"
+```
+
+Este comando cria uma nova tag anotada com a mensagem "Versão 1.0".
+
+### 📌 Listar todas as tags
+
+```bash
+git tag
+```
+
+Este comando lista todas as tags no repositório.
+
+### 📌 Enviar tags para o repositório remoto
+
+```bash
+git push origin --tags
+```
+
+Este comando envia todas as tags locais para o repositório remoto.
+
+### 📌 Deletar uma tag localmente
+
+```bash
+git tag -d v1.0
+```
+
+Este comando deleta a tag `v1.0` localmente.
+
+### 📌 Deletar uma tag no repositório remoto
+
+```bash
+git push origin --delete tag v1.0
+```
+
+Este comando deleta a tag `v1.0` no repositório remoto.
+
+---
+
+## 📤 6. Sincronizando com o Repositório Remoto
 
 ### 📌 Enviar alterações para o GitHub
 
@@ -221,7 +265,7 @@ git pull origin nome-da-branch
 
 ---
 
-## 🔄 6. Gerenciando Merge e Pull Requests
+## 🔄 7. Gerenciando Merge e Pull Requests
 
 ### 📌 Fazer merge de uma branch na branch principal
 
@@ -238,7 +282,7 @@ gh pr create --base main --head minha-nova-branch --title "Novo recurso" --body 
 
 ---
 
-## ❌ 7. Desfazendo Alterações
+## ❌ 8. Desfazendo Alterações
 
 ### 📌 Desfazer alterações antes do commit
 
@@ -280,26 +324,31 @@ Ou consulte a documentação oficial do Git.
 
 ## 📋 Tabela Resumida dos Principais Comandos
 
-| Ação                                    | Comando                                                                                                  | Explicação                                                              |
-| --------------------------------------- | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| **Instalar Git no Linux**               | `sudo apt update && sudo apt install git -y`                                                             | Instala o Git no Ubuntu/Debian.                                         |
-| **Configurar nome e email**             | `git config --global user.name "Seu Nome"`<br>`git config --global user.email "seuemail@example.com"`    | Configura o nome e email para os commits.                               |
-| **Verificar configuração do Git**       | `git config --list`                                                                                      | Exibe a configuração atual do Git.                                      |
-| **Criar um repositório local**          | `mkdir meu-repo && cd meu-repo && git init -b main`                                                      | Cria um novo repositório Git local.                                     |
-| **Adicionar repositório remoto**        | `git remote add origin https://github.com/seu-usuario/meu-repo.git`                                      | Adiciona um repositório remoto.                                         |
-| **Clonar um repositório**               | `git clone https://github.com/seu-usuario/meu-repo.git`                                                  | Clona um repositório existente.                                         |
-| **Adicionar arquivos ao commit**        | `git add nome-do-arquivo`<br>`git add .`                                                                 | Adiciona arquivos ao staging para commit.                               |
-| **Criar um commit**                     | `git commit -m "Mensagem do commit"`                                                                     | Cria um commit com uma mensagem descritiva.                             |
-| **Enviar alterações para o GitHub**     | `git push origin nome-da-branch`                                                                         | Envia os commits locais para o repositório remoto.                      |
-| **Atualizar repositório local**         | `git pull origin nome-da-branch`                                                                         | Atualiza o repositório local com as mudanças do repositório remoto.     |
-| **Criar e mudar para uma nova branch**  | `git checkout -b minha-nova-branch`                                                                      | Cria e muda para uma nova branch.                                       |
-| **Mudar para uma branch existente**     | `git checkout nome-da-branch`                                                                            | Muda para uma branch existente.                                         |
-| **Fazer merge de uma branch**           | `git checkout main && git merge minha-nova-branch`                                                       | Mescla as mudanças de uma branch para a branch principal.               |
-| **Desfazer alterações antes do commit** | `git restore nome-do-arquivo`                                                                            | Desfaz alterações em um arquivo antes do commit.                        |
-| **Resetar commit localmente**           | `git reset HEAD~1`                                                                                       | Remove o último commit, mas mantém os arquivos.                         |
-| **Desfazer commit e arquivos**          | `git reset --hard HEAD~1`                                                                                | Remove completamente o último commit e suas alterações.                 |
-| **Criar um Pull Request**               | `gh pr create --base main --head minha-nova-branch --title "Novo recurso" --body "Descrição da feature"` | Cria um Pull Request via GitHub CLI.                                    |
-| **Testar a conexão SSH**                | `ssh -T git@github.com`                                                                                  | Testa a conexão SSH com o GitHub.                                       |
-| **Verificar status dos arquivos**       | `git status`                                                                                             | Exibe o status atual do repositório, incluindo arquivos modificados.    |
-| **Listar branches**                     | `git branch`                                                                                             | Lista todas as branches locais.                                         |
-| **Criar um arquivo .gitignore**         | `New-Item .gitignore`                                                                                    | Cria um arquivo .gitignore para especificar arquivos a serem ignorados. |
+| Ação                                      | Comando                                                                                                  | Explicação                                                              |
+| ----------------------------------------- | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| **Instalar Git no Linux**                 | `sudo apt update && sudo apt install git -y`                                                             | Instala o Git no Ubuntu/Debian.                                         |
+| **Configurar nome e email**               | `git config --global user.name "Seu Nome"`<br>`git config --global user.email "seuemail@example.com"`    | Configura o nome e email para os commits.                               |
+| **Verificar configuração do Git**         | `git config --list`                                                                                      | Exibe a configuração atual do Git.                                      |
+| **Criar um repositório local**            | `mkdir meu-repo && cd meu-repo && git init -b main`                                                      | Cria um novo repositório Git local.                                     |
+| **Adicionar repositório remoto**          | `git remote add origin https://github.com/seu-usuario/meu-repo.git`                                      | Adiciona um repositório remoto.                                         |
+| **Clonar um repositório**                 | `git clone https://github.com/seu-usuario/meu-repo.git`                                                  | Clona um repositório existente.                                         |
+| **Adicionar arquivos ao commit**          | `git add nome-do-arquivo`<br>`git add .`                                                                 | Adiciona arquivos ao staging para commit.                               |
+| **Criar um commit**                       | `git commit -m "Mensagem do commit"`                                                                     | Cria um commit com uma mensagem descritiva.                             |
+| **Enviar alterações para o GitHub**       | `git push origin nome-da-branch`                                                                         | Envia os commits locais para o repositório remoto.                      |
+| **Atualizar repositório local**           | `git pull origin nome-da-branch`                                                                         | Atualiza o repositório local com as mudanças do repositório remoto.     |
+| **Criar e mudar para uma nova branch**    | `git checkout -b minha-nova-branch`                                                                      | Cria e muda para uma nova branch.                                       |
+| **Mudar para uma branch existente**       | `git checkout nome-da-branch`                                                                            | Muda para uma branch existente.                                         |
+| **Fazer merge de uma branch**             | `git checkout main && git merge minha-nova-branch`                                                       | Mescla as mudanças de uma branch para a branch principal.               |
+| **Desfazer alterações antes do commit**   | `git restore nome-do-arquivo`                                                                            | Desfaz alterações em um arquivo antes do commit.                        |
+| **Resetar commit localmente**             | `git reset HEAD~1`                                                                                       | Remove o último commit, mas mantém os arquivos.                         |
+| **Desfazer commit e arquivos**            | `git reset --hard HEAD~1`                                                                                | Remove completamente o último commit e suas alterações.                 |
+| **Criar um Pull Request**                 | `gh pr create --base main --head minha-nova-branch --title "Novo recurso" --body "Descrição da feature"` | Cria um Pull Request via GitHub CLI.                                    |
+| **Testar a conexão SSH**                  | `ssh -T git@github.com`                                                                                  | Testa a conexão SSH com o GitHub.                                       |
+| **Verificar status dos arquivos**         | `git status`                                                                                             | Exibe o status atual do repositório, incluindo arquivos modificados.    |
+| **Listar branches**                       | `git branch`                                                                                             | Lista todas as branches locais.                                         |
+| **Criar um arquivo .gitignore**           | `New-Item .gitignore`                                                                                    | Cria um arquivo .gitignore para especificar arquivos a serem ignorados. |
+| **Criar uma nova tag**                    | `git tag -a v1.0 -m "Versão 1.0"`                                                                        | Cria uma nova tag anotada com a mensagem "Versão 1.0".                  |
+| **Listar todas as tags**                  | `git tag`                                                                                                | Lista todas as tags no repositório.                                     |
+| **Enviar tags para o repositório remoto** | `git push origin --tags`                                                                                 | Envia todas as tags locais para o repositório remoto.                   |
+| **Deletar uma tag localmente**            | `git tag -d v1.0`                                                                                        | Deleta a tag `v1.0` localmente.                                         |
+| **Deletar uma tag no repositório remoto** | `git push origin --delete tag v1.0`                                                                      | Deleta a tag `v1.0` no repositório remoto.                              |
