@@ -352,3 +352,40 @@ Ou consulte a documentação oficial do Git.
 | **Enviar tags para o repositório remoto** | `git push origin --tags`                                                                                 | Envia todas as tags locais para o repositório remoto.                   |
 | **Deletar uma tag localmente**            | `git tag -d v1.0`                                                                                        | Deleta a tag `v1.0` localmente.                                         |
 | **Deletar uma tag no repositório remoto** | `git push origin --delete tag v1.0`                                                                      | Deleta a tag `v1.0` no repositório remoto.                              |
+
+## Melhores Práticas de Controle de Versão e Commits
+
+### Mensagens de Commit Claras e Descritivas
+- **Seja claro e conciso**: A mensagem do commit deve descrever claramente o que foi alterado e por quê.
+- **Use o imperativo**: Escreva mensagens de commit no imperativo, como "Adiciona suporte para autenticação".
+- **Inclua detalhes relevantes**: Se o commit resolve um bug ou adiciona uma nova feature, inclua detalhes suficientes para que outros desenvolvedores entendam a mudança.
+
+### Commits Pequenos e Frequentes
+- **Commits atômicos**: Cada commit deve representar uma única mudança lógica. Isso facilita o rastreamento de bugs e a revisão de código.
+- **Commits frequentes**: Faça commits frequentemente para evitar grandes mudanças que são difíceis de revisar e testar.
+
+### Uso de Branches
+- **Branches de feature**: Crie uma nova branch para cada nova feature ou bug fix. Isso mantém a branch principal (`main` ou `master`) estável.
+- **Nomes de branches descritivos**: Use nomes de branches que descrevam a finalidade da branch, como `feature/autenticacao` ou `bugfix/corrigir-login`.
+
+### Versionamento Semântico
+- **Versionamento semântico**: Use versionamento semântico (SemVer) para gerenciar versões do seu projeto. O formato é `MAJOR.MINOR.PATCH`:
+  - **MAJOR**: Mudanças incompatíveis na API.
+  - **MINOR**: Adição de funcionalidades de forma retrocompatível.
+  - **PATCH**: Correções de bugs retrocompatíveis.
+
+### Uso de Tags
+- **Tags para versões**: Use tags para marcar versões específicas do seu software. Isso facilita o rastreamento de versões e a criação de releases.
+- **Mensagens de tag**: Inclua uma mensagem descritiva ao criar uma tag para explicar o que mudou nessa versão.
+
+### Revisão de Código
+- **Pull Requests (PRs)**: Use pull requests para revisar e discutir mudanças antes de mesclá-las na branch principal.
+- **Revisão por pares**: Tenha pelo menos uma outra pessoa revisando o código para garantir a qualidade e a detecção de possíveis problemas.
+
+### Automação
+- **CI/CD**: Configure pipelines de integração contínua (CI) e entrega contínua (CD) para automatizar testes e deploys.
+- **Ferramentas de versionamento**: Use ferramentas como `standard-version` para automatizar o versionamento e a criação de changelogs.
+
+### Exemplo de Mensagem de Commit
+```sh
+git commit -m "Adiciona suporte para autenticação via OAuth2"
